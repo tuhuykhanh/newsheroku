@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "sass": "node-sass --watch src/resources/sass/main.scss   src/public/css/main.css",
-    "startsv": "nodemon --inspect src/main.js",
-    "start": "node .src/main.js"
+    "start": "node src/main.js",
+    "startsv": "nodemon --inspect src/main.js"
   },
   "author": "huykhanh",
   "license": "ISC",
