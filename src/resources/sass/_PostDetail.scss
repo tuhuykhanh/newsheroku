@@ -1,0 +1,189 @@
+
+.container-postdetail
+{
+    padding: 2rem  20rem 0 12rem;
+    img
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    p
+    {
+        text-rendering: optimizeSpeed;
+        word-spacing: .2rem;
+        margin-bottom: 0.5rem;
+    }
+    .post-header
+    {
+        .date-create
+        {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: rgba(0,0,0,.7)
+        }
+        .title
+        {
+            font-size: 3.2rem;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 1rem;
+        }
+    }
+    .post-body
+    {
+        .description
+        {
+            
+            margin-bottom: 1.5rem;
+            p{
+                font-size: 1.8rem;
+                line-height: 160%;
+                font-weight: 400;
+            }
+        }
+        .container-image
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            text-align: center;
+            .image
+            {
+                width: 100%;
+                max-height: 55rem;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .content
+        {
+            p{
+                font-size: 1.8rem;
+                line-height: 160%;
+                font-weight: 400;
+            }
+            margin-bottom: 1rem;
+        }
+        .author
+        {
+            float: right;
+        }
+    }
+}
+.sectionPostDetail
+{
+    position: relative;
+
+    .containerMV_PostDetail
+    {
+        position: fixed;
+        right: 12rem;  
+        height: fit-content;
+        width: 310px;
+    
+        &.active
+        {
+            position: absolute;
+            right: 12rem;
+            bottom: 2rem; 
+        }
+        &.transform
+        {
+            transform: translateY(-14rem);
+        }
+    
+        .title-box-cate
+        {
+            width: fit-content;
+            text-align: left;
+            height: 3rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--title-color);
+            h4{
+                font-size: 2rem;
+                color: var(--title-color);
+            }
+        }
+        .timeOpen
+        {
+            font-size: 1.4rem;
+        }
+       .box-mostview-item
+       {
+
+            max-height: 340px;
+            overflow-y: scroll;
+            padding-right: 1rem;
+            margin-bottom: 1rem;
+            &::-webkit-scrollbar
+            {
+                width: .5rem;
+            }
+            &::-webkit-scrollbar-thumb
+            {
+                background-color: #212F3C;
+                height: 5rem !important;
+                border-radius: 10rem;
+            }
+            &::-webkit-scrollbar-track
+            {
+                background-color: transparent ;
+                border-radius: 10rem;
+            }  
+
+
+            .boxMostView
+            {   
+                display: block;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+                display: flex;
+                gap: 1rem;
+                &:hover  .image img
+                {
+                    transform: scale(1.1)
+                }
+
+                .image
+                {
+                    display: block;
+                    width: 110px;
+                    height: 70px;
+                    overflow: hidden;
+                    flex-shrink: 0;
+                    img{
+                        
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .title
+                {
+                    display: block;
+                    color: black;
+                    font-weight: normal;
+                    p
+                    {   
+                        font-size: 1.4rem;  
+                        .eyes
+                        {
+                            color: rgba(0,0,0,0.5);
+                            margin-left: .5rem;
+                        }      
+                    }
+                }
+            }
+       }  
+    }
+}

@@ -1,0 +1,66 @@
+<section class="sections">
+    <div class="container-createpost">
+        <div class="form-input">
+            <form action="/admin/postedit{{post._id}}?_method=PUT" method="POST" class="form" enctype="multipart/form-data">
+                <div class="box">
+                    <div class="left">
+                        <h4 class="title">Create</h4>
+                        <div class="form-group">
+                            <label for="Title" class="form-label">Title</label>
+                            <input id="Title" value="{{post.title}}" name="title" type="text"
+                                class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="thumbnail" class="form-label">Thumbnail</label>
+                            <input id="thumbnail" name="thumbnail" type="file" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category" class="form-label">Category</label>
+                            <select name="category"  id="category" >
+                                <option value="">Choose A Category</option>
+                                {{#each categorys}}
+                              
+                                <option value="{{this._id}}">{{this.name}}</option>
+
+                                {{/each}}
+                            </select>
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea  id="description" name="description" rows="5" cols="33">{{post.description}}</textarea>
+                            <span class="form-message"></span>
+                        </div>
+
+                    </div>
+                    <div class="right">
+                        <div class="form-review">
+                            <h4 class="title">Review</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="content" class="form-label">Content</label>
+                    <textarea name="content" id="content" cols="30" rows="10">
+                    {{post.content}}
+                    </textarea>
+                    <span class="form-message"></span>
+                </div>
+                <button class="form-submit">Save</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    CKEDITOR.replace('content', {
+        "extraPlugins": 'imagebrowser',
+        "imageBrowser_listUrl": "/files"
+    });
+</script>

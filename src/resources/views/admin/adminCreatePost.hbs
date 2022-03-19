@@ -1,0 +1,100 @@
+<section class="sections">
+    <div class="container-createpost">
+        <div class="form-input">
+            <form action="/admin/create" method="POST" class="form" id="form-1" enctype="multipart/form-data">
+
+                <div class="box">
+                    <div class="left">
+                        <h4 class="title">Create</h4>
+                        <div class="form-group">
+                            <label for="Title" class="form-label">Title</label>
+                            <input id="Title" value="" name="title" type="text" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="thumbnail" class="form-label">Thumbnail</label>
+                            <input id="thumbnail" name="thumbnail" type="file" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category" class="form-label">Category</label>
+                            <select name="category" id="category" required>
+                                <option value="">Choose A Category</option>
+                                {{#each categorys}}
+                              
+                                <option value="{{this._id}}">{{this.name}}</option>
+
+                                {{/each}}
+                            </select>
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea id="description" name="description" rows="5" cols="33"></textarea>
+                            <span class="form-message"></span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="form-review">
+                            <h4 class="title">Review</h4>
+                            <div class="container-box-rv">
+                                <div class="image-rv">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="middle">
+                                    <div class="by">
+                                        <span></span>
+                                    </div>
+                                    <div class="create-at">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="title-rv">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="content" class="form-label">Content</label>
+                    <textarea name="content" id="content" cols="30" rows="10">
+                    </textarea>
+                    <span class="form-message"></span>
+                </div>
+                <button class="form-submit save-btn">Create Post</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    CKEDITOR.replace('content', {
+        "extraPlugins": 'imagebrowser',
+        "imageBrowser_listUrl": "/files"
+    });
+
+    const titleIp = document.querySelector('input[name="title"]')
+    const titleRv = document.querySelector('.title-rv p')
+    const datebox = document.querySelector('.create-at span')
+    const boxImgRv = document.querySelector('.image-rv img')
+    const byRv = document.querySelector('.by span')
+
+
+    titleIp.oninput = (e) => {
+
+        titleRv.textContent = titleIp.value
+
+        const date = new Date
+        const hour = `${date.getHours()}:${date.getMinutes()}`
+        const dateNow = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}, ${hour}`;
+        datebox.innerText = dateNow
+        boxImgRv.src = `/img/thumbnail-post/defaultimg.jpg`
+
+        byRv.innerText = 'Admin'
+
+    }
+
+</script>

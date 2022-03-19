@@ -1,0 +1,74 @@
+<section class="section">
+
+
+    <div class="container-search">
+        <div class="top">
+            <div class="box-search">
+
+                <input autocomplete="off" placeholder="enter your key word here" onkeyup="getvalue(this)" type="text" name="keyword"
+                    id="searchbox">
+                <div class="fas fa-search enter"></div>
+
+            </div>
+        </div>
+        <div class="content">
+            <div class="box" id="results"> 
+
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+
+<script>
+
+    function getvalue(e) {
+
+        const box = document.getElementById('results')
+        let match = e.value.match(/^[a-zA-z ]*/);
+        let match2 = e.value.match(/\s*/);
+        if (match2[0] === e.value) {
+
+            box.innerHTML = '';
+            return;
+        }
+        if (match[0] === e.value) {
+            fetch('getvalue', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ payload: e.value })
+            }).then(res => res.json())
+                .then(data => {
+                    let payload = data.payload
+                    box.innerHTML = '';
+                    if (payload.length < 1) {
+                        box.innerHTML = `<div class="not-found">
+                                            <div class="icon">
+                                                <i class="fa-solid fa-face-sad-cry"></i>
+                                            </div>
+                                            <div class="title">
+                                                <h3> No Post Found </h3>
+                                            </div>
+                                        </div>`
+                        return;
+                    }
+                    payload.forEach((item, index) => {
+                        if (index > 0) box.innerHTML += '<hr>';
+                        box.innerHTML += `<a href="/post/${item.slug}" class="valueresult">
+                                            <div class="image">
+                                                <img src="${item.thumbnail}" alt="thumbnail">
+                                            </div>
+                                            <div class="content">
+                                                <p>${item.title}</p>
+                                            </div>
+                                         </a>`;
+                    });
+                });
+            return;
+        }
+        box.innerHTML = '';
+    }
+
+</script>

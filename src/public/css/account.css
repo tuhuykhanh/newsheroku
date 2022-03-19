@@ -1,0 +1,302 @@
+.container-login {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D6EAF8; }
+  .container-login .login-form {
+    width: 45rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 3px solid #fff;
+    margin: 5rem 0; }
+    .container-login .login-form .content-top {
+      font-size: 2rem;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.8);
+      margin-top: 2rem; }
+      .container-login .login-form .content-top .text-top div {
+        animation: showTopText 1s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+        bottom: 0;
+        transform: translate(0, 100%); }
+        .container-login .login-form .content-top .text-top div span {
+          font-size: 3rem;
+          color: orange; }
+      .container-login .login-form .content-top .text-bottom div {
+        animation: showBottomText 0.5s;
+        animation-delay: 1.75s;
+        animation-fill-mode: forwards;
+        top: 0;
+        transform: translate(0, -100%); }
+      .container-login .login-form .content-top h2 {
+        margin-bottom: 0.5rem;
+        color: orange;
+        transform-origin: 0 50%;
+        animation: loginTitle .5s linear; }
+    .container-login .login-form .form label {
+      font-size: 1.5rem; }
+    .container-login .login-form .form .forgot {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5rem; }
+      .container-login .login-form .form .forgot a {
+        font-size: 1.5rem; }
+    .container-login .login-form .form input {
+      height: 5.5rem;
+      font-size: 1.8rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      margin-bottom: .5rem;
+      border-radius: .5rem;
+      background-color: #CCD1D1; }
+      .container-login .login-form .form input:hover {
+        border: 2px solid black;
+        background-color: #fff; }
+    .container-login .login-form .form .form-group {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 0; }
+    .container-login .login-form .form .form-submit {
+      width: 100%;
+      height: 5.5rem;
+      border-radius: .5rem;
+      font-size: 2rem;
+      background-color: #58D68D;
+      cursor: pointer; }
+      .container-login .login-form .form .form-submit:hover {
+        background-color: #28B463; }
+    .container-login .login-form .break {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 1rem 0; }
+    .container-login .login-form .social-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem; }
+      .container-login .login-form .social-icons .icon {
+        font-size: 3rem;
+        cursor: pointer;
+        width: 5rem;
+        height: 5rem;
+        border: 2px solid #34495E;
+        border-radius: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .container-login .login-form .social-icons .facebook {
+        color: #2471A3; }
+      .container-login .login-form .social-icons .google {
+        color: #148F77; }
+    .container-login .login-form .regis {
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem; }
+      .container-login .login-form .regis p {
+        display: inline-block; }
+
+.container-register {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D6EAF8; }
+  .container-register .register-form {
+    width: 45rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 3px solid #fff;
+    margin: 5rem 0; }
+    .container-register .register-form .content-top {
+      text-align: center; }
+      .container-register .register-form .content-top h2 {
+        font-size: 2.5rem;
+        font-weight: normal; }
+    .container-register .register-form .form label {
+      font-size: 1.5rem; }
+    .container-register .register-form .form input {
+      height: 5.5rem;
+      font-size: 1.8rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: .5rem;
+      background-color: #CCD1D1; }
+      .container-register .register-form .form input:hover {
+        border: 2px solid black;
+        background-color: #fff; }
+    .container-register .register-form .form .form-group {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 0; }
+    .container-register .register-form .form .form-submit {
+      width: 100%;
+      height: 5.5rem;
+      border-radius: .5rem;
+      font-size: 2rem;
+      background-color: #58D68D;
+      cursor: pointer; }
+      .container-register .register-form .form .form-submit:hover {
+        background-color: #28B463; }
+
+.form-group.invalid .form-control {
+  border-color: #f33a58; }
+
+.form-group.invalid .form-message {
+  color: #f33a58; }
+
+.form-group .form-message {
+  font-size: 1.6rem;
+  color: #f33a58; }
+
+.form-message {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 4px 0 0; }
+
+.form-group.invalid .form-control {
+  border-color: #f33a58; }
+
+.container-profile {
+  display: flex;
+  gap: 2rem;
+  background-color: #D5F5E3;
+  flex-wrap: wrap;
+  border-radius: 1rem;
+  min-height: 35rem; }
+  .container-profile .info-left {
+    flex: 1 1 10rem;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fromletf 2s ease; }
+    .container-profile .info-left .background-top {
+      position: absolute;
+      width: 100%;
+      height: 3rem;
+      background-color: blue;
+      z-index: -1; }
+    .container-profile .info-left .avatar {
+      width: 20rem;
+      height: 20rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-bottom: 1rem; }
+      .container-profile .info-left .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    .container-profile .info-left .username h3 {
+      font-size: 2rem;
+      font-weight: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    .container-profile .info-left .address p {
+      font-size: 2rem;
+      color: rgba(0, 0, 0, 0.8); }
+  .container-profile .info-right {
+    flex: 1 1 30rem;
+    padding: 2rem;
+    opacity: 0;
+    animation: faded 1s forwards 1s; }
+    .container-profile .info-right .form-group {
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer; }
+      .container-profile .info-right .form-group .form-label {
+        margin-right: 1rem; }
+      .container-profile .info-right .form-group .form-control {
+        width: 100%;
+        height: 4rem;
+        font-size: 1.5rem;
+        border-radius: 2rem;
+        overflow: hidden;
+        padding: 0 1rem; }
+    .container-profile .info-right .form-submit {
+      width: 10rem;
+      height: 4rem;
+      float: right;
+      border-radius: .5rem;
+      background-color: #5DADE2;
+      cursor: pointer;
+      font-size: 1.5rem; }
+
+.container-profile-normal {
+  display: flex;
+  gap: 2rem;
+  background-color: #D5F5E3;
+  flex-wrap: wrap;
+  border-radius: 1rem;
+  min-height: 35rem; }
+  .container-profile-normal .info-left-normal {
+    flex: 1 1 10rem;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fromletf 2s ease; }
+    .container-profile-normal .info-left-normal .background-top-normal {
+      position: absolute;
+      width: 100%;
+      height: 3rem;
+      background-color: blue;
+      z-index: -1; }
+    .container-profile-normal .info-left-normal .avatar-normal {
+      width: 20rem;
+      height: 20rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-bottom: 1rem; }
+      .container-profile-normal .info-left-normal .avatar-normal img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    .container-profile-normal .info-left-normal .username-normal h3 {
+      font-size: 2rem;
+      font-weight: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    .container-profile-normal .info-left-normal .address-normal p {
+      font-size: 2rem;
+      color: rgba(0, 0, 0, 0.8); }
+  .container-profile-normal .info-right-normal {
+    flex: 1 1 30rem;
+    padding: 2rem;
+    opacity: 0;
+    animation: faded 1s forwards 1s; }
+    .container-profile-normal .info-right-normal .info-normal {
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 1.5rem; }
+    .container-profile-normal .info-right-normal .form-group {
+      margin-bottom: 1rem; }
+    .container-profile-normal .info-right-normal .edit-btn {
+      margin-top: 0.5rem; }
+      .container-profile-normal .info-right-normal .edit-btn a {
+        display: block;
+        width: 10rem;
+        height: 4rem;
+        background-color: #5DADE2;
+        border-radius: .5rem;
+        text-align: center;
+        line-height: 2.5;
+        color: #fff; }

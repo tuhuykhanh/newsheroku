@@ -1,0 +1,190 @@
+<section class="sectionPostDetail">
+
+    <div class="containerMV_PostDetail">
+            <div class="title-box-cate">
+                <h4>Xem nhiều</h4>
+            </div>
+            <div class="box-mostview-item">
+              
+                {{#each posts}}
+                    <a href="/post/{{this.slug}}" class="boxMostView">
+                        <div class="image">
+                            <img src="/{{this.thumbnail}}" alt="">
+                        </div>
+                        <div  class="title">
+
+                            <p> {{this.title}}.<span class="eyes">{{this.views}} <i class="fa-solid fa-eye"></i></span></p>
+                        </div>
+                    </a>  
+                {{/each}}
+            </div>
+            <div class="title-box-cate">
+                <h4>Lịch mở cửa tham quan</h4>
+            </div>
+            <div class="box-mostview-item timeOpen">
+                <p>
+                    <strong>
+                        Mở cửa tất cả các ngày trong tuần:
+                    </strong>
+                </p>
+                <p>
+                    <strong>Sáng:</strong><span> 7h30 – 11h</span>
+                </p>
+                <p>
+                    <strong>Chiều:</strong><span> 13h30 – 17h</span>
+                </p>
+                <p>
+                    <strong>Liên hệ:</strong><span> 0296 3851310</span>
+                </p>
+                
+            </div>
+    </div>
+
+   
+
+    <div class="container-postdetail">
+        <div class="post-header">
+            <div class="date-create">
+                <span class="left">{{post.category.name}}</span>
+
+                <span class="right">{{post.createdAt}}</span>
+            </div>
+            <h2 class="title">
+                {{post.title}}
+            </h2>
+        </div>
+        <div class="post-body">
+            <div class="description">
+                <p>{{post.description}}</p>
+            </div>
+            <div class="container-image">
+                <div class="image">
+                    <img src="/{{post.thumbnail}}" alt="thumbnail">
+                </div>
+            </div>
+
+            <div class="content">
+                {{{ post.content }}}
+            </div>
+            <div class="contentreal">
+            </div>
+            <div class="author">
+                <h3 class="name">By: {{post.user.username}}</h3>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="container-comment">
+
+        <div class="box-title">
+            <h3 class="title">Comment</h3>
+        </div>
+
+        <div class="comment-enter">
+
+            <input class="contentcomment" type="text" contenteditable="true" name="contentcomment">
+
+            <div class="btn-send-comment">send</div>
+
+        </div>
+
+        <div class="comments-box">
+            {{#each comments}}
+            <div class="box box-item-{{this._id}} boxhoverout">
+                <div class="avata">
+                    <img src="/{{this.iduser.avatar}}" alt="cmtuser">
+                </div>
+
+                <div class="content">
+
+                    <div class="username">
+                        <h3>{{this.iduser.username}}</h3>
+                        <smal class="time">{{this.time}}</smal>
+                    </div>
+                    <p>{{this.content}}</p>
+                    <p class="data-email">{{this.iduser.email}}</p>
+                    <button value="{{this.iduser.email}}" class="controls threedos-btn" id="{{this._id}}">
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                        <div class="dropdown dropdownbox" data-id="{{this._id}}">
+                            <div onclick="deletecmt(`{{this._id}}`)" class="delete">delete</div>
+                        </div>
+                    </button>
+
+                </div>
+
+
+            </div>
+            {{/each}}
+            {{!-- <div class="box box-comment">
+                <div class="avata">
+                    <img src="https://images.unsplash.com/photo-1638913971251-832d29947de6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                        alt="">
+                </div>
+                <div class="content">
+                    <div class="username">
+                        <h3>khanh huy</h3>
+                        <smal class="time">9 pm</smal>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis consequuntur quidem officia earum,
+                        suscipit hic non deserunt impedit aspernatur iusto saepe inventore repellat dolores minus
+                        doloremque voluptas dicta placeat. Dolores?</p>
+                </div>
+                <div class="controls">
+                    <i class="fa-solid fa-ellipsis"></i>
+
+                    <div class="dropdown">
+                        <div class="delete">delete</div>
+                    </div>
+                </div>
+            </div> --}}
+        </div>
+        <div class="ontyping">
+            <p></p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+
+    <div class="container-related">
+        <div class="box-title">
+            <h3 class="title">Bài viết liên quan</h3>
+        </div>
+        {{#each postscates}}
+        <div class="box-post">
+            <div class="image">
+                <a href="/post/{{this.slug}}">
+                    <img src="/{{this.thumbnail}}" alt="">
+                </a>
+            </div>
+            <div class="content">
+                <a href="/post/{{this.slug}}">
+                    <h3 class="title">
+                        {{this.title}}
+                    </h3>
+                </a>
+                <a href="/post/{{this.slug}}">
+                    <p class="description">
+                        {{this.description}}
+                    </p>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
+
+<script>
+
+
+ 
+
+
+</script>

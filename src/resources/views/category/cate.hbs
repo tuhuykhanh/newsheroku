@@ -1,0 +1,52 @@
+<div class="container-home category-pad">
+    <div class="home-page">
+        {{!-- background-top --}}
+        {{!-- categorys --}}
+        <div class="container-cate">
+            <div class="categorys">
+                <ul class="list-category">
+                    <h3>category: </h3>
+
+                    <li class="item"><a href="/" class="icon-home-cate"><i class="fa-solid fa-house"></i></a></li>
+
+                    <li class="item"><div class="icon-home-bars"><i class="fa-solid fa-bars"></i></div></li>
+                    
+                    <div class="container-li">
+                         {{#each categorys}}
+                        <li class="item li-child"> <a href="/c/{{this.slug}}/{{this._id}}">{{this.name}}</a> </li>
+                        {{/each}}
+                         
+                    </div>
+                </ul>
+            </div>
+        </div>
+      {{!-- recent post --}}
+        <section class="section " id="posts" >
+           
+            <div class="container-recent-post">
+                {{#each posts}}
+                <div class="post-box">
+                    <div class="post-image">
+                        <a href="/post/{{this.slug}}">
+                            <img src="/{{this.thumbnail}}" alt="">
+                        </a>
+                    </div>
+                    <div class="postster">
+                        <h3 class="postster-name">
+                            {{this.user.username}}
+                        </h3>
+
+                        <span class="date-create">
+                            Create At: 2/21/2022
+                        </span>
+
+                    </div>
+                    <div class="post-title">
+                        <a href="/post/{{this.slug}}">{{this.title}}</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+    </div>
+</div>

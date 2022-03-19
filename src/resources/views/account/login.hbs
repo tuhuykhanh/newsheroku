@@ -1,0 +1,67 @@
+<div class="container-login">
+   
+    <div class="login-form">
+        <div class="content-top">
+
+            <div class="text-top">
+                <div>
+                    <span>Hello Again!</span>
+                </div>
+            </div>
+            <div class="text-bottom">
+                <div>wellcome back bro!!</div>
+            </div>
+        </div>
+        <form method="POST" class="form" id="form-1">
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="email" placeholder="Ex: email@gmail.com" class="form-control">
+                <span  class="form-message">{{err}}</span>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">password</label>
+                <input id="password" name="password" type="password" placeholder="password" class="form-control">
+                 <span class="form-message">{{errpass}}</span>
+            </div>
+            <div class="forgot">
+                <a href="/account/password_resets">forgot your password ?</a>
+            </div>
+
+            <button class="form-submit">Log in</button>
+        </form>
+        <p class="break"> --- or continue with ---</p>
+
+        <div class="social-icons">
+            <div class="google icon">
+                <i class="fab fa-google"></i>
+            </div>
+            <div class="facebook icon">
+                <i class="fab fa-facebook"></i>
+            </div>
+        </div>
+        <div class="regis">
+            <p>not a member ?</p><a href="/account/register">register now</a>
+        </div>
+    </div>
+</div>
+<script>
+     
+document.addEventListener('DOMContentLoaded', function () {
+    Validator({
+      form: '#form-1',
+      formGroupSelector: '.form-group',
+      errorSelector: '.form-message',
+      rules: [
+ 
+        Validator.isRequired('#password',),
+        Validator.isRequired('#email',),
+        Validator.isEmail('#email'),
+        Validator.minLength('#password', 6),  
+      ],
+    
+    });
+  });
+
+</script>

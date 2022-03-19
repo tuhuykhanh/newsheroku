@@ -1,0 +1,112 @@
+
+<section class="sections">
+  <div class="g-sidenav-show ">
+    <div class="min-height-300  position-absolute w-100"></div>
+    <main class="main-content position-relative border-radius-lg ">
+      <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-4">
+              <div class="card-header pb-0">
+                <h6>Comments table</h6>
+              </div>
+              <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                  <table class="table align-items-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Posts</th>  
+                      </tr>
+                    </thead>
+                    <tbody>
+                    
+                        <tr>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div>
+                                    <img src="/{{post.thumbnail}}" class="avatar avatar-sm me-3 " alt="post">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm titlecolor"> {{post.title}}</h6>
+                    
+                                    </div>
+                                </div>
+                            </td>
+                        {{#each comments}}  
+                        <div class="box-comment">
+                            <img src="/{{this.iduser.avatar}}" class="avatar avatar-sm me-3 circle" alt="user">
+                        
+                            <div class="username">
+                                <h6 class=""> {{this.iduser.username}}:</h6>
+                            </div>
+                            <div class="content">
+                                <h6 class=""> {{this.content}}</h6>
+                            </div>
+
+                            <a href="" class="delete-btn-cmt" data-toggle="modal"
+                            data-target="#confirm-delete" data-id="{{this._id}}">
+                            Delete
+                          </a>
+                        </div>
+                        {{/each}}
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  {{!-- comfirm delete user --}}
+
+  <div class="modal fade z-index" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete comment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are your sure delete this comment?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="btn-delete-user" class="btn btn-primary yes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- fake form submit delete user --}}
+  <form method="POST" id="formDelete"></form>
+
+</section>
+<script>
+
+  document.addEventListener('DOMContentLoaded', () => {    
+         
+
+         let cmtid; 
+        //get data id from delete btn 
+        $('#confirm-delete').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            cmtid = button.data('id')
+            
+        })
+        const formdel = document.getElementById('formDelete')
+        const btnDelete = document.getElementById('btn-delete-user')
+     
+        btnDelete.onclick = () => {
+            formdel.setAttribute('action', `/admin/comment/delete${cmtid}?_method=DELETE`);
+            formdel.submit();
+        }   
+    })
+
+</script>

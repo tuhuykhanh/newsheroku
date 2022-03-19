@@ -1,0 +1,82 @@
+<div class="top">
+    <div class="logo">
+        <a href="/"> HUY<span>KHANH</span></a>
+    </div>
+
+    <nav class="navbar">
+
+        <ul class="containerCat">
+
+            <li><a href="#" class="cat-item">test</a></li>
+            <li><a href="#" class="cat-item">home</a></li>
+            <li><a href="#" class="cat-item">page</a></li>
+            <li><a href="#" class="cat-item">cate</a></li>
+            <li><a href="#" class="cat-item">gory</a></li>
+            
+        </ul>
+       
+    </nav>
+
+    <div class="search-form search-form-hidden">
+        <div class="container-form">
+            <div class="fas fa-times"></div>
+            <form method="" action="">
+                <input name="keyword" type="text" placeholder="type hear">
+                <button type="submit">search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="control">
+        <div class="btn-bars">
+            <i class="fas fa-bars"></i>
+        </div>
+        <a href="/search" class="search-btn btn">
+            <i class="fas fa-search">
+            </i>
+        </a>
+
+        <div class="fa-solid fa-cloud-moon togglemode interface"></div>
+
+        {{#if lcisLogged}}
+        <div class="info-user">
+            <div class="image">
+                <img src="/{{lcuser.avatar}}" alt="image">
+            </div>
+            <div class="info-user-control">
+
+                <div class="user">
+                    <a href="/account/profile"> <i class="fas fa-user-alt"></i>my profile</a>
+                </div>
+
+
+                {{#if lcisAdmin}}
+                    <div class="adminpage">
+                        <a href="/admin">Admin page</a>
+                    </div>
+                {{/if}}
+
+                <div class="signOut">
+                    <a href="/account/logout"><i class="fas fa-sign-out-alt"></i> log out</a>
+                </div>
+            </div>
+            <div class="name">
+                <h3>{{lcuser.username}}</h3>
+            </div>
+            <div class="getemail" id="getemail">
+                <h3>{{lcuser.email}}</h3>
+            </div>
+        </div>
+        {{else}}
+        <div class="handle-logInOut">
+            <div class="signin btn">
+                <a href="/account/login">sign in</a>
+            </div>
+            <div class="register btn">
+                <a href="/account/register">register</a>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+
+</div>
